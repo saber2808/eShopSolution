@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    public class ProductInCategories
+    public class ProductInCategory
     {
         public int ProductId { get; set; }
         public Product Product { get; set; }

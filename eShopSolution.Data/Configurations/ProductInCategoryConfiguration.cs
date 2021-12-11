@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Configurations
 {
-    public class ProductInCategoryConfiguration : IEntityTypeConfiguration<ProductInCategories>
+    public class ProductInCategoryConfiguration : IEntityTypeConfiguration<ProductInCategory>
     {
-        public void Configure(EntityTypeBuilder<ProductInCategories> builder)
+        public void Configure(EntityTypeBuilder<ProductInCategory> builder)
         {
             builder.HasKey(t => new { t.CategoryId, t.ProductId });
             builder.ToTable("ProductInCategories");
