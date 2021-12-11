@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eShopSolution.Data.Configurations;
 using eShopSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,14 @@ namespace eShopSolution.Data.EF
     {
         public eShopDBContext(DbContextOptions options) : base(options)
         {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AppConfigConfigurations());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductInCategoryConfiguration());
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -23,5 +32,7 @@ namespace eShopSolution.Data.EF
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<AppConfig> AppConfigs { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
     }
 }
