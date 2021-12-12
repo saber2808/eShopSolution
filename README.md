@@ -5,3 +5,7 @@
 ## Facebook
 - https://www.facebook.com/NDDH.Saber/
 ## Learn at home
+## Install Packages
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
